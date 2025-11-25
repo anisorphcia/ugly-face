@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://anisorphcia.github.com/ugly-face",
+  "homepage": "https://anisorphcia.github.io/ugly-face",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
