@@ -477,6 +477,7 @@ export default function FaceGenerator() {
             />
           </linearGradient>
         </defs>
+        {/* 背景 */}
         <rect
           x="-100"
           y="-100"
