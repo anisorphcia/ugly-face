@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type CSSProperties } from "react";
 import * as faceShape from "../utils/face_shape.js";
 import * as eyeShape from "../utils/eye_shape.js";
 import * as hairLines from "../utils/hair_lines.js";
@@ -175,6 +175,7 @@ export default function FaceGenerator() {
     setHaventSleptForDays(Math.random() > 0.8);
 
     const faceResults = faceShape.generateFaceCountourPoints();
+    console.log("faceResults", faceResults);
     setComputedFacePoints(faceResults.face);
     setFaceHeight(faceResults.height);
     setFaceWidth(faceResults.width);
@@ -309,27 +310,15 @@ export default function FaceGenerator() {
     const choice = Math.floor(Math.random() * 3);
     if (choice === 0) {
       setMouthPoints(
-        mouthShape.generateMouthShape0(
-          faceResults.face,
-          faceResults.height,
-          faceResults.width,
-        ),
+        mouthShape.generateMouthShape0(faceResults.height, faceResults.width),
       );
     } else if (choice === 1) {
       setMouthPoints(
-        mouthShape.generateMouthShape1(
-          faceResults.face,
-          faceResults.height,
-          faceResults.width,
-        ),
+        mouthShape.generateMouthShape1(faceResults.height, faceResults.width),
       );
     } else {
       setMouthPoints(
-        mouthShape.generateMouthShape2(
-          faceResults.face,
-          faceResults.height,
-          faceResults.width,
-        ),
+        mouthShape.generateMouthShape2(faceResults.height, faceResults.width),
       );
     }
   }
@@ -363,7 +352,7 @@ export default function FaceGenerator() {
 
   useEffect(() => {
     generateFace();
-    const handler = (e) => {
+    const handler = (e: KeyboardEvent) => {
       if (e.key === " ") {
         e.preventDefault();
         generateFace();
@@ -489,7 +478,7 @@ export default function FaceGenerator() {
             ]
           }
         />
-        s s s s{/* 脸轮廓 */}
+        {/* 脸轮廓 */}
         <polyline
           id="faceContour"
           points={pointsToString(computedFacePoints)}

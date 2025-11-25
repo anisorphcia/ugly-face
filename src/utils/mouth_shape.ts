@@ -98,7 +98,6 @@ export function getEggShapePoints(
 }
 
 export function generateMouthShape0(
-  faceContour: Point[],
   faceHeight: number,
   faceWidth: number,
 ): Point[] {
@@ -155,7 +154,6 @@ export function generateMouthShape0(
 }
 
 export function generateMouthShape1(
-  faceContour: Point[],
   faceHeight: number,
   faceWidth: number,
 ): Point[] {
@@ -231,7 +229,6 @@ export function generateMouthShape1(
 }
 
 export function generateMouthShape2(
-  faceContour: Point[],
   faceHeight: number,
   faceWidth: number,
 ): Point[] {
