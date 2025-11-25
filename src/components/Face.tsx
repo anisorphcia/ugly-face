@@ -489,6 +489,7 @@ export default function FaceGenerator() {
             ]
           }
         />
+        s s s s{/* 脸轮廓 */}
         <polyline
           id="faceContour"
           points={pointsToString(computedFacePoints)}
@@ -498,7 +499,6 @@ export default function FaceGenerator() {
           strokeLinejoin="round"
           filter="url(#fuzzy)"
         />
-
         {/* 左眼轮廓 */}
         <g
           transform={
@@ -539,7 +539,6 @@ export default function FaceGenerator() {
             filter="url(#fuzzy)"
           />
         </g>
-
         {/* 右眼 */}
         <g
           transform={
@@ -584,7 +583,6 @@ export default function FaceGenerator() {
             />
           ))}
         </g>
-
         {/* 左眼 */}
         <g
           transform={
@@ -627,7 +625,6 @@ export default function FaceGenerator() {
             />
           ))}
         </g>
-
         {/* 头发 */}
         <g id="hairs">
           {hairs.map((hair, idx) => (
@@ -642,7 +639,6 @@ export default function FaceGenerator() {
             />
           ))}
         </g>
-
         {/* 鼻子 */}
         {Math.random() > 0.5 ? (
           <g id="pointNose">
@@ -700,7 +696,6 @@ export default function FaceGenerator() {
             />
           </g>
         )}
-
         {/* 嘴巴 */}
         <g id="mouth">
           <polyline
